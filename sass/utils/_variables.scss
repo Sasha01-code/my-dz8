@@ -7,11 +7,21 @@ $primary-background-color: #2f303a;
 $secondary-backgound: #f5f4fa;
 
 %container {
-  width: 1200px;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+
+  @media screen and (min-width: 480px) {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+  }
 }
 %list {
   padding: 0;
@@ -42,18 +52,32 @@ $secondary-backgound: #f5f4fa;
   border: none;
 }
 %section {
-  padding-top: 94px;
-  padding-bottom: 94px;
   justify-content: center;
+  @media screen and (min-width: 480px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 %section__title {
   margin-top: 0;
   color: $title-text-color;
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   margin-bottom: 50px;
+  @media screen and (min-width: 1200px) {
+    font-size: 36px;
+    line-height: 1.17;
+  }
 }
 %is-hidden {
   opacity: 0;

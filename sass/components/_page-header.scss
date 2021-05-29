@@ -5,16 +5,28 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  // outline: 1px solid tomato;
 }
 body {
   color: $primary-text-color;
   font-family: Roboto, sans-serif;
   letter-spacing: 0.03em;
 }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .header-line {
   background-color: $primary-white-color;
 }
 .page-header {
+  position: relative;
   display: flex;
   background-color: $primary-white-color;
 }
@@ -31,9 +43,15 @@ body {
 }
 .site-nav {
   @extend %list;
-  display: flex;
-  margin-left: 93px;
-  margin-right: 33px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 88px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-left: 93px;
+  }
 }
 .site-nav .site-nav__item:not(:last-child) {
   margin-right: 50px;
@@ -75,13 +93,18 @@ body {
 .contacts {
   @extend %container;
   @extend %list;
-  display: flex;
-  justify-content: flex-end;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+    justify-content: flex-start;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .contacts-address__link {
   display: flex;
-  padding-top: 32px;
-  padding-bottom: 32px;
   color: $primary-text-color;
   font-weight: 500;
   font-size: 14px;
@@ -89,7 +112,11 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  @media screen and (min-width: 1200px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 .contacts-address__link {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,7 +126,12 @@ body {
   }
 }
 .contacts-address:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 0;
+  margin-bottom: 10px;
+  @media screen and (min-width: 1200px) {
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
 }
 .contacts-address__icon {
   width: 16px;

@@ -1,35 +1,76 @@
 .footer {
+  @extend %container;
+  max-width: 1600px;
   background-color: $primary-background-color;
+  display: inline-flex;
+  justify-content: center;
+  &__address {
+    display: block;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      width: 232px;
+      margin-right: 165px;
+      margin-left: 61px;
+    }
+    @media screen and (min-width: 1200px) {
+      text-align: start;
+      margin-right: 70px;
+      margin-left: 0;
+    }
+  }
   &__logo {
     display: block;
     margin-bottom: 20px;
     font-family: Raleway, cursive;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+    font-size: 24px;
+    line-height: 1.17;
     text-decoration: none;
+    @media screen and (min-width: 1200px) {
+      font-size: 26px;
+      line-height: 1.19;
+    }
   }
 }
 .footer-line {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  text-align: center;
+  min-width: 480px;
+  padding: 60px 15px;
   margin-right: auto;
   margin-left: auto;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__table {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: 1200px) {
+      display: inline-flex;
+      margin-bottom: 0;
+    }
+  }
 }
 .address {
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
   &__text {
     color: $primary-white-color;
     font-style: normal;
     margin-top: 20px;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
     font-family: Roboto;
     font-size: 14px;
     line-height: 1.7;
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 9px;
+    }
   }
   &__link {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,6 +115,10 @@
   color: $primary-white-color;
 }
 .footer-social-icons {
+  margin-bottom: 60px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
   &__svg {
     width: 20px;
     height: 20px;
@@ -125,37 +170,50 @@
   margin-bottom: 9px;
 }
 .footer-form {
-  width: 570px;
-  min-height: 86px;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    width: 570px;
+    min-height: 86px;
+  }
   &__title {
-    margin-top: 8px;
+    margin-top: 0;
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     color: $primary-white-color;
+    @media screen and (min-width: 1200px) {
+      margin-top: 8px;
+    }
   }
   &__field {
-    display: flex;
-    margin-bottom: 10px;
-    width: 570px;
+    display: block;
+    text-align: center;
+    width: 450px;
+    @media screen and (min-width: 768px) {
+      width: 738px;
+    }
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      margin-bottom: 10px;
+      width: 570px;
+    }
   }
   &__input {
     margin: 0;
-    margin-right: 12px;
+    margin-right: 0;
+    margin-bottom: 20px;
     padding: 15px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
-    width: 358px;
-    height: 50px;
     border-radius: 4px;
-    font-size: 16px;
-    background-color: #2f303a;
+    width: 450px;
+    height: 50px;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #2f303a;
     &::placeholder {
       color: rgba(255, 255, 255, 0.6);
       font-size: 16px;
@@ -166,6 +224,13 @@
       border-color: $accent-color;
       cursor: pointer;
     }
+    @media screen and (min-width: 1200px) {
+      width: 358px;
+      height: 50px;
+      font-size: 16px;
+      margin-right: 12px;
+      margin-bottom: 0;
+    }
   }
 }
 .footer {
@@ -175,6 +240,8 @@
     background-color: $accent-color;
     border-color: $accent-color;
     width: 200px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 4px;
     padding: 10px 29px;
     font-family: Roboto;

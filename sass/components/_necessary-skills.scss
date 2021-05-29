@@ -10,6 +10,21 @@
 .skills {
   @extend %list;
   display: flex;
+  flex-basis: 100%;
+  @media screen and (min-width: 480px) {
+    display: block;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-wrap: inherit;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__title {
     color: $title-text-color;
     font-weight: 700;
@@ -26,13 +41,30 @@
     line-height: 1.71;
   }
   &__item {
-    width: 270px;
+    margin-bottom: 30px;
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 2 * 15px) / 2);
+    }
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 4 * 15px) / 4);
+      margin-bottom: 0;
+    }
+    &:nth-last-child(-n + 1) {
+      @media screen and (min-width: 480px) {
+        margin-bottom: 0;
+      }
+    }
+    &:nth-last-child(-n + 2) {
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
   }
   &__img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 270px;
+    width: 100%;
     height: 120px;
     margin-bottom: 30px;
     background-color: $secondary-backgound;
@@ -41,7 +73,4 @@
   &__svg {
     color: $title-text-color;
   }
-}
-.skills__item:not(:last-child) {
-  margin-right: 30px;
 }

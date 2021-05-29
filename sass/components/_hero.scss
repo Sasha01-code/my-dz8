@@ -1,28 +1,53 @@
 .hero {
   max-width: 1600px;
-  height: 600px;
+  height: 400px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 200px;
   padding-bottom: 200px;
-  background-image: linear-gradient(
-      to right,
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../image/studia/Img-01.jpg);
   background-color: $primary-background-color;
   background-size: cover;
   text-align: center;
+  @media screen and (min-width: 1200px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(/images/main-page/desktop/img-hero.jpg);
+  }
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(/images/main-page/tablet/img-hero.jpg);
+  }
+  @media screen and (min-width: 480px) {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(/images/main-page/mobile/img-hero.jpg);
+  }
+  @media screen and(min-width:1200px) {
+    height: 600px;
+  }
   &__title {
     margin-top: 0;
     margin-bottom: 30px;
     color: $primary-white-color;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.62;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    @media screen and(min-width:1200px) {
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 }
 .primary {
